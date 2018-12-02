@@ -2,9 +2,8 @@
   <div class="col">
     <div class="list-group">
       <a
-        href="#"
         class="list-group-item"
-        *ngFor="let server of servers">
+        *ngFor="let server of servers" [routerLink]="['/servers/',server.id,'edit']">
         {{ server.name }}
       </a>
     </div>

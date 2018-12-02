@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { ServersComponent } from './servers/servers.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
 
 // hold all the routes for the applications
 const AppRoutes: Routes = [
@@ -24,7 +25,7 @@ const AppRoutes: Routes = [
   },
   {
     path: 'servers/:id/edit', // base_url/servers
-    component: ServersComponent
+    component: EditServerComponent
   },
 ];
 
