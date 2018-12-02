@@ -12,26 +12,8 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import { AppRoutes } from './routes';
 
-// hold all the routes for the applications
-const appRoutes: Routes = [
-  {
-    path: '', // base_url/
-    component: HomeComponent
-  },
-  {
-    path: 'users', // base_url/users
-    component: UsersComponent
-  },
-  {
-    path: 'users/:id/:name', // base_url/users/1/fred
-    component: UserComponent
-  },
-  {
-    path: 'servers', // base_url/servers
-    component: ServersComponent
-  },
-];
 
 @NgModule({
   declarations: [
@@ -47,7 +29,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
