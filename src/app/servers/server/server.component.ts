@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class ServerComponent implements OnInit {
   server: { id: number, name: string, status: string };
-  editable: false;
+  editable = false;
 
   constructor(
     private serversService: ServersService,
@@ -28,6 +28,7 @@ export class ServerComponent implements OnInit {
         this.editable = false;
       }
     });
+
   }
 
   initializeServer() {
