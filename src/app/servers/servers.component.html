@@ -4,7 +4,8 @@
       <a
         class="list-group-item"
         *ngFor="let server of servers"
-        [routerLink]="['/servers/',server.id,'edit']"
+        [routerLink]="['/servers/',server.id]"
+        routerLinkActive="active"
         [queryParams]="{allowEdit: '1'}"
         fragment="SomeFragmentName">
         {{ server.name }}
@@ -12,9 +13,10 @@
     </div>
   </div>
   <div class="col">
-    <app-edit-server></app-edit-server>
+    <router-outlet></router-outlet>
+    <!-- <app-edit-server></app-edit-server>
     <hr>
-    <app-server></app-server>
+    <app-server></app-server> -->
   </div>
 </div>
 

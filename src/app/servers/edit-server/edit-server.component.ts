@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ServersService } from '../servers.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-edit-server',
@@ -12,6 +12,8 @@ export class EditServerComponent implements OnInit {
   server: { id: number; name: string; status: string };
   serverName = '';
   serverStatus = '';
+  routeFragment = '';
+  queryParams: string[] = [];
 
   constructor(private serversService: ServersService, private route: ActivatedRoute) {}
 
@@ -25,6 +27,16 @@ export class EditServerComponent implements OnInit {
       this.serverName = 'unknown';
       this.serverStatus = 'unknown';
     }
+
+    this.routeFragment = this.route.snapshot.fragment;
+
+
+    for (let key in this.route.snapshot.queryParams) {
+      if (this.route.snapshot.queryParams.hasOwnProperty(key)) {
+        this.queryParams.push(`key: '${key}' value: '${this.route.snapshot.queryParams[key]}'`);
+      }
+   }
+
   }
 
   onUpdateServer() {

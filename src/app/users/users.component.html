@@ -2,7 +2,8 @@
   <div class="col">
     <div class="list-group">
       <a
-        href="#"
+        [routerLink]="['/users', user.id, user.name]"
+        routerLinkActive="active"
         class="list-group-item"
         *ngFor="let user of users">
         {{ user.name }}
@@ -10,7 +11,7 @@
     </div>
   </div>
   <div class="col">
-    <app-user></app-user>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

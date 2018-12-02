@@ -1,21 +1,34 @@
-<div class="form-group">
-  <label for="name">Server Name</label>
-  <input
-    type="text"
-    id="name"
-    class="form-control"
-    [(ngModel)]="serverName">
+<div class="row">
+  <div class="col">
+      <div class="form-group">
+          <label for="name">Server Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="serverName">
+        </div>
+        <div class="form-group">
+          <label for="status">Server Status</label>
+          <select id="status" class="form-control" [(ngModel)]="serverStatus">
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" (click)="onUpdateServer()">Update Server</button>
+  </div>
+
 </div>
-<div class="form-group">
-  <label for="status">Server Status</label>
-  <select
-    id="status"
-    class="form-control"
-    [(ngModel)]="serverStatus">
-    <option value="online">Online</option>
-    <option value="offline">Offline</option>
-  </select>
+<div style="display: none">
+    <hr/>
+    <div class="row">
+        <div class="col">
+          <h4>Route Fragment</h4>
+          {{ routeFragment }}
+        </div>
+        <div class="col">
+            <h4>Route Query Parameters</h4>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let param of queryParams">{{ param }}</li>
+            </ul>
+          </div>
+      </div>
 </div>
-<button
-  class="btn btn-primary"
-  (click)="onUpdateServer()">Update Server</button>
+
+
