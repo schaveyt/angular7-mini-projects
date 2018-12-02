@@ -1,0 +1,14 @@
+<div class="card mb-3">
+  <div class="card-header">
+    {{ element.name }}
+    <button type="button" class="close" aria-label="Close" (click)="onDelete()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+    </p>
+  </div>
+</div>

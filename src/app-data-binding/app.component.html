@@ -1,0 +1,16 @@
+<div class="container-fluid debug-layout">
+  <h1>Bind it! - Angular Binding Exercise</h1>
+  <hr class="mb-3">
+  <app-game-control (counterChanged)="onCounterChanged($event)"></app-game-control>
+  <hr class="mb-3">
+  <div *ngFor="let item of counters">
+    <ng-container *ngIf="item % 2 === 0; else elseTemplate">
+      <app-even [value]="item"></app-even>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <app-odd [value]="item"></app-odd>
+    </ng-template>
+  </div>
+  
+  
+</div>

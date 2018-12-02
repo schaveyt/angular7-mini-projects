@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+used for debugging layout
+*/
+.debug-layout {
+    border-style: dotted;
+    border-width: thin;
+    border-color: #cccccc;
+}
+
+.row {
+  padding: 3px;
+}
