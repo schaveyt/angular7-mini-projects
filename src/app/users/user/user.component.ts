@@ -13,12 +13,16 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
+    // Use the snapshot feature of the route to initialize the component based on the route parameters
+    //
     this.updatedUser(
       this.route.snapshot.params['id'],
       this.route.snapshot.params['name']
     );
 
-
+    // If the component active on the screen and the route changes, then we must subscribe to changes made to
+    // changes made to the route.
+    //
     this.route.params.subscribe((params: Params) => {
       this.updatedUser(
         params['id'],
