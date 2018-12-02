@@ -3,7 +3,10 @@
     <div class="list-group">
       <a
         class="list-group-item"
-        *ngFor="let server of servers" [routerLink]="['/servers/',server.id,'edit']">
+        *ngFor="let server of servers"
+        [routerLink]="['/servers/',server.id,'edit']"
+        [queryParams]="{allowEdit: '1'}"
+        fragment="SomeFragmentName">
         {{ server.name }}
       </a>
     </div>
