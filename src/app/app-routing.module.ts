@@ -1,4 +1,6 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
@@ -7,8 +9,9 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-// hold all the routes for the applications
-const AppRoutes: Routes = [
+
+// hold all the routes for the application
+const appRoutes: Routes = [
   {
     path: '', // base_url/
     component: HomeComponent
@@ -47,4 +50,15 @@ const AppRoutes: Routes = [
   }
 ];
 
-export { AppRoutes };
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [
+    RouterModule
+  ]
+
+})
+export class AppRoutingModule {
+
+}
